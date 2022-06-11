@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb5cf8872629d2941920000ac187bd83, type: 3}
+  m_Name: SwampPlace
+  m_EditorClassIdentifier: 
+  MapObjects:
+  - nameElement: LastLayout
+    position: {x: 0, y: 3.17, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    scale: {x: 1, y: 1, z: 1}
+    mapSprite: {fileID: 21300000, guid: a22dd364e2770a04b9ace96821f24d6e, type: 3}
+    flipSpriteX: 0
+    orderSprite: 4
+  - nameElement: ThridLayout
+    position: {x: 0, y: 3.17, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    scale: {x: 1, y: 1, z: 1}
+    mapSprite: {fileID: 21300000, guid: 6d236423a1ea189478c041f4c4625d08, type: 3}
+    flipSpriteX: 0
+    orderSprite: 3
+  - nameElement: SecoundLayout
+    position: {x: 0, y: 3.17, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    scale: {x: 1, y: 1, z: 1}
+    mapSprite: {fileID: 21300000, guid: e53aec077838ff84993fe48245389698, type: 3}
+    flipSpriteX: 0
+    orderSprite: 2
+  - nameElement: FirstLayout
+    position: {x: 0, y: 3.17, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    scale: {x: 1, y: 1, z: 1}
+    mapSprite: {fileID: 21300000, guid: f8d55e0c05d66014ebda9528d1a48d30, type: 3}
+    flipSpriteX: 0
+    orderSprite: 1
+  - nameElement: Ground
+    position: {x: 0.16, y: -0.96, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    scale: {x: 10.81383, y: 1, z: 1}
+    mapSprite: {fileID: 3828209756190959979, guid: 705ea5e4e94eb184d8976f1a82a21bcd, type: 3}
+    flipSpriteX: 0
+    orderSprite: 5
+  - nameElement: RootTree
+    position: {x: 0, y: -0.54, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    scale: {x: 1, y: 1, z: 1}
+    mapSprite: {fileID: -2402655214562223813, guid: 4d33f1aa7cf312b4c9f09b998744895e, type: 3}
+    flipSpriteX: 0
+    orderSprite: 6
+  - nameElement: LeftRootTree
+    position: {x: 0.8121, y: -0.5402, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    scale: {x: 1.326225, y: 1.326225, z: 1}
+    mapSprite: {fileID: 5882546014730987746, guid: 4d33f1aa7cf312b4c9f09b998744895e, type: 3}
+    flipSpriteX: 0
+    orderSprite: 6
+  - nameElement: RightRootTree
+    position: {x: -0.8121, y: -0.5402, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    scale: {x: 1.326225, y: 1.326225, z: 1}
+    mapSprite: {fileID: 5882546014730987746, guid: 4d33f1aa7cf312b4c9f09b998744895e, type: 3}
+    flipSpriteX: 1
+    orderSprite: 6
+  branchPrefab:
+    nameElement: Branch
+    position: {x: 0, y: 0.12, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    scale: {x: 1, y: 0.44, z: 1}
+    mapSprite: {fileID: 1006522354900872382, guid: 4d33f1aa7cf312b4c9f09b998744895e, type: 3}
+    flipSpriteX: 0
+    orderSprite: 6
+    prefabGameObject: {fileID: 8177508697000738336, guid: 35b035b4cba4bff41bbb6cf3ca824619, type: 3}
+  treePrefab:
+    nameElement: Tree
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
+    scale: {x: 1, y: 1, z: 1}
+    mapSprite: {fileID: 4484879606942851175, guid: 4d33f1aa7cf312b4c9f09b998744895e, type: 3}
+    flipSpriteX: 0
+    orderSprite: 7
+    prefabGameObject: {fileID: 7653788069506944434, guid: 34b0ff9b96a723e44a08cbd0a69e7f24, type: 3}
