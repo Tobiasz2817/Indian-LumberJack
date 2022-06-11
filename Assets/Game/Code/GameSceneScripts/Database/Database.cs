@@ -1,6 +1,3 @@
-using System.Collections; 
-using System.Collections.Generic; 
-using System.Data.SqlClient; 
 using Mono.Data.Sqlite; 
 using UnityEngine; 
 public class Database : MonoBehaviour 

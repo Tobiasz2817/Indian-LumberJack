@@ -2005,7 +2005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointForBlock: 1
-  increaseTimer: 7.5
+  increaseTimer: 5
 --- !u!50 &1478013695
 Rigidbody2D:
   serializedVersion: 4
@@ -2246,7 +2246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2323947471431230811, guid: 906862af4a5fe3447bf484d974f58814, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2323947471431230813, guid: 906862af4a5fe3447bf484d974f58814, type: 3}
       propertyPath: m_RootOrder

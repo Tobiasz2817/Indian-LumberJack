@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -12,17 +9,19 @@ public class GameUI : MonoBehaviour
     private GameObject panelUI;
 
     private PlayerInput playerInput;
+    private LevelLoader levelLoader;
 
     private void Start()
     {
         panelUI.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = FindObjectOfType<Database>().GetScore().ToString();
 
         playerInput = FindObjectOfType<PlayerInput>();
+        levelLoader = FindObjectOfType<LevelLoader>();
     }
 
     public void Pause(InputAction.CallbackContext hit)
     {
-        if (hit.action.triggered && !panelUI.activeInHierarchy)
+        if (hit.action.triggered && !panelUI.activeInHierarchy && levelLoader.IsLoaded())
         {
             Time.timeScale = 0.0f;
             panelUI.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = "Pause";
@@ -40,9 +39,11 @@ public class GameUI : MonoBehaviour
     public void BackToMenu()
     {
         FindObjectOfType<LevelLoader>().LoadLevelByIndex(SceneManager.GetActiveScene().buildIndex - 1);
+        UnPause();
     }
     public void Restart()
     {
         FindObjectOfType<LevelLoader>().LoadLevelByIndex(SceneManager.GetActiveScene().buildIndex);
+        UnPause();
     }
 }
