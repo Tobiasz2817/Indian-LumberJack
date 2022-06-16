@@ -4,7 +4,7 @@ public class Database : MonoBehaviour
 {
     private SqliteConnection sqliteConnection; 
     private string path = "gamecollector.sqlite"; 
-    void Start() 
+    void Awake() 
     {
         CreateDatabase();
     } 
@@ -22,9 +22,9 @@ public class Database : MonoBehaviour
         sqliteConnection.Close(); 
     }
 
-    public int GetScore()
+    public int GetScore(int currentDifficulty)
     {
-        string commandExecute = "select score_player from score";
+        string commandExecute = $"select score_player_{((Difficulty)currentDifficulty).ToString()} from score";
         
         if (sqliteConnection == null) return -1; 
         sqliteConnection.Open(); 
@@ -34,7 +34,7 @@ public class Database : MonoBehaviour
          
         while (reader.Read()) 
         { 
-            text += reader["score_player"]; 
+            text += reader[$"score_player_{((Difficulty)currentDifficulty).ToString()}"]; 
         } 
         
         reader.Close(); 
@@ -43,9 +43,10 @@ public class Database : MonoBehaviour
         return int.Parse(text);
     }
 
-    public void UpdateScore(int score)
+    public void UpdateScore(int score, int currentDifficulty)
     {
-        string commandExecute = $"update score set score_player = {score.ToString()} where id_score = '1'";
+        Debug.Log(((Difficulty)currentDifficulty).ToString());
+        string commandExecute = $"update score set score_player_{((Difficulty)currentDifficulty).ToString()} = {score.ToString()} where id_score = '1'";
         
         if (sqliteConnection == null) return; 
         
@@ -73,7 +74,9 @@ public class Database : MonoBehaviour
         string addScore = @" 
         create table score ( 
         id_score              INTEGER              not null, 
-        score_player                INTEGER              not null, 
+        score_player_Easy                INTEGER              not null, 
+        score_player_Medium                INTEGER              not null, 
+        score_player_Hard                INTEGER              not null, 
         primary key (id_score) 
         );"; 
         SqliteCommand addClassesCommand = new SqliteCommand(addScore, sqliteConnection); 
@@ -81,7 +84,7 @@ public class Database : MonoBehaviour
         sqliteConnection.Close(); 
          
          
-        string sql = "insert into score values ('1','0')"; 
+        string sql = "insert into score values ('1','0','0','0')"; 
         InsertDatabaseValues(sql);
     } 
 }

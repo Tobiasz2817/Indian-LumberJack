@@ -23,8 +23,7 @@ public class PlayerAttack : MonoBehaviour
         if (hit.action.triggered && !GameManager.GameOver)
         {
             animator.Play("HitTree");
-            gameTree.HitTree();
-            
+            gameTree.HitTree(hit);
             
             pointsCollector.UpdatePoints(pointForBlock);
             playerTime.UpdateTime(increaseTimer);

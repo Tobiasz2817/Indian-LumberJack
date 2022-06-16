@@ -4,10 +4,6 @@ using UnityEngine;
 public class Poller 
 {
     private List<GameObject> myObjects = new List<GameObject>();
-    public void CreatePoller(GameObject prefab)
-    {
-        myObjects.Add(prefab);
-    }
     public GameObject GetObject()
     {
         for (int i = 0; i < myObjects.Count; i++)

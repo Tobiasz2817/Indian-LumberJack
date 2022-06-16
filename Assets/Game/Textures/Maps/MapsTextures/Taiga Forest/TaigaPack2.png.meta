@@ -90,6 +90,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -640,6 +641,29 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      TaigaPack2_19: -2175222255057882327
+      TaigaPack2_2: 4457797528950180288
+      TaigaPack2_17: -2308560832035540309
+      TaigaPack2_4: -3317068108456438090
+      TaigaPack2_11: 6133031246141301839
+      TaigaPack2_21: -1413238533280301464
+      TaigaPack2_9: 900463268982658629
+      TaigaPack2_18: 344439584601839986
+      TaigaPack2_8: -718043770956467790
+      TaigaPack2_0: 8014533808368858286
+      TaigaPack2_20: -2560888995811686066
+      TaigaPack2_16: -8970552160010920920
+      TaigaPack2_1: -2705831041693427282
+      TaigaPack2_15: -6702486840269871898
+      TaigaPack2_5: -3367833897063740486
+      TaigaPack2_7: 3805182160434109694
+      TaigaPack2_3: 6646053519145046781
+      TaigaPack2_13: 5574987693629529845
+      TaigaPack2_6: 7379092432821938557
+      TaigaPack2_14: 7326919843674780958
+      TaigaPack2_10: 3196075289731622396
+      TaigaPack2_12: 8668698194556887951
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

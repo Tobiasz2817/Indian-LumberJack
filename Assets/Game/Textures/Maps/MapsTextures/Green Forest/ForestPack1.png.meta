@@ -99,6 +99,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -712,6 +713,32 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      ForestPack1_8: -5779984295300255332
+      ForestPack1_2: -564249810061034649
+      ForestPack1_10: 5659898913932297063
+      ForestPack1_12: 7219162378079215315
+      ForestPack1_16: -8638408585185648978
+      ForestPack1_21: -4304926127706755364
+      ForestPack1_0: 3828209756190959979
+      ForestPack1_1: -8832888208136368238
+      ForestPack1_13: -6638758188319284021
+      ForestPack1_20: 7566255510591306514
+      ForestPack1_15: 5519310877384185037
+      ForestPack1_24: -2931571813488289219
+      ForestPack1_22: -2499718116492119997
+      ForestPack1_6: -6736869096840710297
+      ForestPack1_11: 5435721491604619655
+      ForestPack1_14: 7030291539851724093
+      ForestPack1_19: -2294878097380674314
+      ForestPack1_9: -4001227917864759020
+      ForestPack1_23: -4576667653050092455
+      ForestPack1_7: 4698520659994082667
+      ForestPack1_17: 7323349514077594090
+      ForestPack1_3: -2789127303272146178
+      ForestPack1_4: -3204985641996363769
+      ForestPack1_18: -2357763010672863217
+      ForestPack1_5: 730162846362093848
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

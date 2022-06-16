@@ -13,7 +13,7 @@ public class GameUI : MonoBehaviour
 
     private void Start()
     {
-        panelUI.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = FindObjectOfType<Database>().GetScore().ToString();
+        panelUI.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text =  "High score: " + FindObjectOfType<Database>().GetScore((int)GameManager.currentDiff);
 
         playerInput = FindObjectOfType<PlayerInput>();
         levelLoader = FindObjectOfType<LevelLoader>();

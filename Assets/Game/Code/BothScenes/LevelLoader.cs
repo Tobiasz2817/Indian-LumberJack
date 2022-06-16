@@ -26,14 +26,7 @@ public class LevelLoader : MonoBehaviour
 
     public bool IsLoaded()
     {
-        return !IsPlaying(transition,"Transition_end_UI");
+        return !AnimationManager.IsPlaying(transition,"Transition_end_UI");
     }
-    bool IsPlaying(Animator anim, string stateName)
-    {
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName(stateName) &&
-            anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
-            return true;
-        else
-            return false;
-    }
+
 }

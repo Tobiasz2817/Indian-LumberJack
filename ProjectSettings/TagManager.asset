@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Branch
+  - GameUI
+  - Points
+  - PanelOverUI
+  - Weapon
+  - Character
   layers:
   - Default
   - TransparentFX

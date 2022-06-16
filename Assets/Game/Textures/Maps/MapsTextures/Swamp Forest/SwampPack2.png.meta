@@ -129,6 +129,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -952,6 +953,42 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      SwampPack2_26: 1890069519787688315
+      SwampPack2_34: 5882546014730987746
+      SwampPack2_2: -6283602054521844637
+      SwampPack2_8: 4466302105022632991
+      SwampPack2_9: -2378827597734836083
+      SwampPack2_24: 3171979985185393293
+      SwampPack2_0: -2972042890025698252
+      SwampPack2_17: 7813922681360572351
+      SwampPack2_29: -6693519346256927776
+      SwampPack2_22: 2043233593454841405
+      SwampPack2_19: -6147986479819481039
+      SwampPack2_11: 1678314327887424345
+      SwampPack2_13: 2498322563043881809
+      SwampPack2_16: -7504876961256651740
+      SwampPack2_7: -7716787548275679690
+      SwampPack2_1: 791089838259516320
+      SwampPack2_20: -7526741369263914882
+      SwampPack2_12: 3077683659616575385
+      SwampPack2_15: -3720564913305434453
+      SwampPack2_31: 4484879606942851175
+      SwampPack2_5: -7663790457605501334
+      SwampPack2_4: 7692476943512698378
+      SwampPack2_18: -1861910508569360214
+      SwampPack2_10: -2034767395256431182
+      SwampPack2_6: 4752154449224347592
+      SwampPack2_25: -4249618745949076606
+      SwampPack2_14: 7314876535244633364
+      SwampPack2_30: 1006522354900872382
+      SwampPack2_21: -7675866483293881484
+      SwampPack2_3: 5203655024693776223
+      SwampPack2_32: 2781048037309518660
+      SwampPack2_23: 7098290788713964542
+      SwampPack2_33: -2402655214562223813
+      SwampPack2_28: -8760359021591029340
+      SwampPack2_27: 3658659352175472944
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

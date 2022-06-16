@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
 public class GameTree : MonoBehaviour
@@ -12,20 +13,23 @@ public class GameTree : MonoBehaviour
     [SerializeField] 
     private int countTree = 30;
 
-    private float sizeScreenY;
+    private PlayerSpawn playerSpawn;
+    private AnimateBlock animateBlock;
     public Poller PollerTree { get; private set; }
     
     private void Awake()            
     {
         PollerTree = new Poller();
+        playerSpawn = FindObjectOfType<PlayerSpawn>();
+        animateBlock = FindObjectOfType<AnimateBlock>();
     }
 
     private void Start()
     {
         CreateTree(countTree);
-        
-        Camera camera = Camera.main;
-        sizeScreenY = camera.ScreenToWorldPoint(new Vector2(camera.pixelWidth,camera.pixelHeight)).y;
+
+        if(playerSpawn) playerSpawn.SpawnPlayer(PollerTree.ReturnPolledObject()[0].transform.GetChild(0).position);
+        animateBlock.CreateAnimatePoller(treePrefab);
     }
 
     private void CreateTree(int countTree)
@@ -39,7 +43,7 @@ public class GameTree : MonoBehaviour
         for (int i = 0; i < countTree; i++)
         {
             GameObject tree = Instantiate(treePrefab, new Vector2(0,i) , Quaternion.identity, transform);
-            PollerTree.CreatePoller(tree);
+            PollerTree.Add(tree);
         }
         
         CreateBranches();
@@ -111,23 +115,7 @@ public class GameTree : MonoBehaviour
         lastNextNextBranch.position =  new Vector2(lastBranchX * -1,lastNextNextBranch.position.y);
         lastNextNextNextBranch.position = new Vector2(0,lastNextNextNextBranch.position.y);
     }
-
-    private int RandomBranchPos(int valuePreviosBranch)
-    {
-        int randomX = Random.Range(-1,2);
-            
-        while (valuePreviosBranch == (randomX * -1))
-        {
-            if (randomX == 0)
-                break;
-                
-            randomX = Random.Range(-1, 1);
-        }
-
-        return randomX;
-    }
-
-    public void HitTree()
+    public void HitTree(InputAction.CallbackContext hit)
     {
         var array = PollerTree.ReturnPolledObject();
         GameObject firstBlock = array[0];
@@ -139,6 +127,8 @@ public class GameTree : MonoBehaviour
         ControlBranches(array);
 
         DescresAllPosition(array);
+        
+        animateBlock.Animate(hit.control.name);
     }
 
     private void DescresAllPosition(List<GameObject> arrayTree)
@@ -164,7 +154,22 @@ public class GameTree : MonoBehaviour
         
         PollerTree.Add(firstBlock);
     }
+    private int RandomBranchPos(int valuePreviosBranch)
+    {
+        int randomX = Random.Range(-1,2);
+            
+        while (valuePreviosBranch == (randomX * -1))
+        {
+            if (randomX == 0)
+                break;
+                
+            randomX = Random.Range(-1, 1);
+        }
 
+        return randomX;
+    }
+
+    
     public void SetTree(GameObject treePrefab, GameObject branchPrefab)
     {
         this.treePrefab = treePrefab;

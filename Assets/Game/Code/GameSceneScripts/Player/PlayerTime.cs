@@ -3,22 +3,30 @@ using UnityEngine.UI;
 
 public class PlayerTime : MonoBehaviour
 {
-    [SerializeField]
-    private float speedTime = 5f;
+    private float speedTime = 10f;
     
     private float currentTime = 1;
+    private float currentDeltaTime = 0;
     
     private Image currentTimeUI;
+    private LevelLoader levelLoader;
     void Start()
     {
         currentTimeUI = GetComponent<Image>();
+        levelLoader = FindObjectOfType<LevelLoader>();
+
+        if (!levelLoader || !currentTimeUI) this.enabled = false;
+
+        speedTime = (float)GameManager.currentDiff;
     }
     
-    void Update()
+    void FixedUpdate()
     {
-        if (GameManager.GameOver) return;
+        if (GameManager.GameOver || !levelLoader.IsLoaded()) return;
+
+        currentDeltaTime = Time.deltaTime;
         
-        currentTime -= (Time.deltaTime * speedTime) / 100;
+        currentTime -= (currentDeltaTime * speedTime) / 100;
         currentTimeUI.fillAmount = currentTime;
         
         if (currentTimeUI.fillAmount <= 0)
@@ -31,6 +39,6 @@ public class PlayerTime : MonoBehaviour
     public void UpdateTime(float increaseTime)
     {
         if(currentTime < 1)
-            currentTime += (Time.deltaTime * increaseTime);
+            currentTime += (currentDeltaTime * increaseTime) / 10;
     }
 }

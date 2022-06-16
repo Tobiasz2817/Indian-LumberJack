@@ -102,6 +102,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -715,6 +716,32 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Cave_Biome2Decs_16: 3563839500852646161
+      Cave_Biome2Decs_3: -3057640957703862055
+      Cave_Biome2Decs_22: -5750743840242646574
+      Cave_Biome2Decs_6: -1757270890068264929
+      Cave_Biome2Decs_2: -5892188264589518855
+      Cave_Biome2Decs_14: 8545420316647705215
+      Cave_Biome2Decs_5: 1719734708850678553
+      Cave_Biome2Decs_17: -5100324433639941882
+      Cave_Biome2Decs_8: -5747665811716672692
+      Cave_Biome2Decs_9: 3355061114302661681
+      Cave_Biome2Decs_13: 4731927548816568679
+      Cave_Biome2Decs_0: -1122433292391177826
+      Cave_Biome2Decs_20: 3965402347548652689
+      Cave_Biome2Decs_4: -5523537605562918852
+      Cave_Biome2Decs_15: 4417947058550550192
+      Cave_Biome2Decs_23: 8345945127778359211
+      Cave_Biome2Decs_1: 6210236701056335766
+      Cave_Biome2Decs_12: 4722786988684497366
+      Cave_Biome2Decs_24: 1604416484653929306
+      Cave_Biome2Decs_18: 4163142847983794871
+      Cave_Biome2Decs_21: 3464658376401230259
+      Cave_Biome2Decs_25: 8226494846766490541
+      Cave_Biome2Decs_7: 9170940333490635420
+      Cave_Biome2Decs_11: 7549773832472339606
+      Cave_Biome2Decs_10: -7337026822399588887
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
