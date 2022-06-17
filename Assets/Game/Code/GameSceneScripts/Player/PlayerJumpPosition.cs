@@ -11,15 +11,7 @@ public class PlayerJumpPosition : MonoBehaviour
     private float sizeTree;
     void Awake()
     {
-        var sprites = GetComponentsInChildren<SpriteRenderer>();
-        foreach (var spriteRenderer in sprites)
-        {
-            if (spriteRenderer.gameObject.CompareTag("Character"))
-            {
-                playerSprite = spriteRenderer;
-                break;
-            }
-        }
+        playerSprite = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Start()

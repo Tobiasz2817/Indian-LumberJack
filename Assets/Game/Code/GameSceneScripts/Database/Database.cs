@@ -45,7 +45,6 @@ public class Database : MonoBehaviour
 
     public void UpdateScore(int score, int currentDifficulty)
     {
-        Debug.Log(((Difficulty)currentDifficulty).ToString());
         string commandExecute = $"update score set score_player_{((Difficulty)currentDifficulty).ToString()} = {score.ToString()} where id_score = '1'";
         
         if (sqliteConnection == null) return; 

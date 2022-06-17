@@ -14,7 +14,6 @@ public class EventInputController : MonoBehaviour
         playerJump = GetComponent<PlayerJumpPosition>();
         playerHealth = GetComponent<PlayerHealth>();
         playerAttack = GetComponent<PlayerAttack>();
-
         playerInput = GetComponent<PlayerInput>();
         
         SubscriteEvents();
@@ -22,27 +21,27 @@ public class EventInputController : MonoBehaviour
 
     public void SubscriteEvents()
     {
-        var perf = playerInput.actions.FindAction("AttackTree");
-        perf.performed += playerJump.SwampPosition;
-        perf.performed += playerHealth.CheckCollision;
-        perf.performed += playerAttack.PressToHit;
-        
-        var perfMultiply = playerInput.actions.FindAction("AttackTreeMultiply");
-        perfMultiply.performed += playerJump.SwampPosition;
-        perfMultiply.performed += playerHealth.CheckCollision;
-        perfMultiply.performed += playerAttack.PressToHit;
+        SubscribeAction("AttackTree");
+        SubscribeAction("AttackTreeMultiply");
     }
 
     public void UnSubscriteEvents()
     {
-        var perf = playerInput.actions.FindAction("AttackTree");
+        UnSubscribeAction("AttackTree");
+        UnSubscribeAction("AttackTreeMultiply");
+    }
+    public void SubscribeAction(string action)
+    {
+        var perf = playerInput.actions.FindAction(action);
+        perf.performed += playerJump.SwampPosition;
+        perf.performed += playerHealth.CheckCollision;
+        perf.performed += playerAttack.PressToHit;
+    }
+    public void UnSubscribeAction(string action)
+    {
+        var perf = playerInput.actions.FindAction(action);
         perf.performed -= playerJump.SwampPosition;
         perf.performed -= playerHealth.CheckCollision;
         perf.performed -= playerAttack.PressToHit;
-        
-        var perfMultiply = playerInput.actions.FindAction("AttackTreeMultiply");
-        perfMultiply.performed -= playerJump.SwampPosition;
-        perfMultiply.performed -= playerHealth.CheckCollision;
-        perfMultiply.performed -= playerAttack.PressToHit;
     }
 }

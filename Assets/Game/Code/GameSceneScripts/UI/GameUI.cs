@@ -7,7 +7,7 @@ public class GameUI : MonoBehaviour
 {
     [SerializeField] 
     private GameObject panelUI;
-
+    
     private PlayerInput playerInput;
     private LevelLoader levelLoader;
 
