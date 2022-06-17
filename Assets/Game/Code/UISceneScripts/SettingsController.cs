@@ -2,11 +2,21 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
+
 public class SettingsController : MonoBehaviour
 {
-    public TMP_Dropdown resolutionDropdown; 
-    public TMP_Dropdown qualityDropdown; 
-    Resolution[] resolutions; 
+    [SerializeField]
+    private TMP_Dropdown resolutionDropdown; 
+    [SerializeField]
+    private TMP_Dropdown qualityDropdown;
+
+    [SerializeField] 
+    private AudioMixer mixer;
+    [SerializeField] 
+    private AudioMixer hitMixer;
+    
+    private Resolution[] resolutions; 
      
     private void Awake()
     {
@@ -46,5 +56,11 @@ public class SettingsController : MonoBehaviour
     public void SetFullscreen(bool isFullscreen) 
     { 
         Screen.fullScreen = isFullscreen; 
-    }     
+    }
+
+    public void SetVolume(float sliderVol)
+    {
+        mixer.SetFloat("Volume", sliderVol);
+        hitMixer.SetFloat("Hit", sliderVol);
+    }
 }

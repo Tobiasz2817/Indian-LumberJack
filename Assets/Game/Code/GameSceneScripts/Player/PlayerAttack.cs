@@ -6,7 +6,9 @@ public class PlayerAttack : MonoBehaviour
     private PlayerPointsCollector pointsCollector;
     private PlayerTime playerTime;
     private Animator animator;
-
+    private SoundsManager soundManager;
+    
+    
     [SerializeField] 
     private int pointForBlock;
     [SerializeField] 
@@ -17,6 +19,7 @@ public class PlayerAttack : MonoBehaviour
         playerTime = FindObjectOfType<PlayerTime>();
         animator = GetComponentInChildren<Animator>();
         pointsCollector = GetComponent<PlayerPointsCollector>();
+        soundManager = FindObjectOfType<SoundsManager>();
     }
     public void PressToHit(InputAction.CallbackContext hit)
     {
@@ -24,6 +27,9 @@ public class PlayerAttack : MonoBehaviour
         {
             animator.Play("HitTree");
             gameTree.HitTree(hit);
+            
+            if(soundManager)
+                soundManager.PlayDestroyTree();
             
             pointsCollector.UpdatePoints(pointForBlock);
             playerTime.UpdateTime(increaseTimer);

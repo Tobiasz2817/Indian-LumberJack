@@ -4,6 +4,19 @@ using UnityEngine.UI;
 
 public class UIButtonsEvent : MonoBehaviour
 {
+    public void SetToggleSound(Toggle toggle)
+    {
+        toggle.isOn = GameManager.playSounds;
+    }
+    public void SetBooleanSound(bool arePlaying)
+    {
+        GameManager.playSounds = arePlaying;
+    }
+    public void SetSliderValue(Slider setTo)
+    {
+        SoundsManager sounds = FindObjectOfType<SoundsManager>();
+        sounds.GetCurrentValueVolume(setTo);
+    }
     public void SetToggleBooleanIsOn(Toggle toggle)
     {
         toggle.isOn = GameManager.fpsCheck;
